@@ -194,7 +194,7 @@
                 <version>3.0.0-M2</version>
                 <configuration>
                     <skipTests>
-                        true
+                        false
                     </skipTests>
                     <includes>
                         <include>**/*Test.java</include>
