@@ -50,7 +50,7 @@ public class DiffTest extends TestCase {
                 for (String versionFile:versionFiles) {
                 	String versionFullPath = versionPath + "/" + versionFile;
                 	if (Files.isDirectory(Paths.get(versionFullPath + "/buggy-version/"))) {
-                		System.out.println(versionFullPath);
+                		System.out.println(versionFullPath + "/buggy-version/");
                 	}
                 }
             }
