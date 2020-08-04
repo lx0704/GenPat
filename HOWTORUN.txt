@@ -1,0 +1,3 @@
+export PATH=/home/xia/XiaLi/Tool/apache-maven-3.6.3//bin:$PATH
+
+mvn test -Dtest=mfix.core.node.diff.DiffTest#test_extractFileDiff2
