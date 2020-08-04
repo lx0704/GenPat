@@ -49,6 +49,8 @@ public class DiffTest extends TestCase {
                 String[] versionFiles = versionF.list();
                 for (String versionFile:versionFiles) {
                 	String versionFullPath = versionPath + "/" + versionFile;
+                	System.out.println(versionFullPath);
+                	int total_change_line_number = 0; //change line number for each commit
                 	if (Files.isDirectory(Paths.get(versionFullPath + "/buggy-version/"))) {
                 		File buggyPath = new File(versionFullPath + "/buggy-version/");
                 		String[] buggyFiles = buggyPath.list();
