@@ -12,6 +12,7 @@ import mfix.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.File;
 import java.util.List;
 
 /**
@@ -38,11 +39,17 @@ public class DiffTest extends TestCase {
     	String[] years = {"NewDown2011-2017","NewDown2018","NewDown201811-12"};
     	for(int i = 0; i < 3; i++) {
     		String yearPath = basePath + years[i];
-    		System.out.println(yearPath);
+    		File f = new File(yearPath);
+    		String[] pathnames = f.list();
+    		for (String pathname : pathnames) {
+                // Print the names of files and directories
+                System.out.println(yearPath + pathname);
+            }
+    		String srcFile = testbase + Constant.SEP + "src_Project.java";
+    	    String tarFile = testbase + Constant.SEP + "tar_Project.java";
+    	    List<Diff> diffs = Diff.extractFileDiff(srcFile, tarFile, TextDiff.class);
+    	    System.out.println(diffs.size());
     	}
-        String srcFile = testbase + Constant.SEP + "src_Project.java";
-        String tarFile = testbase + Constant.SEP + "tar_Project.java";
-        List<Diff> diffs = Diff.extractFileDiff(srcFile, tarFile, TextDiff.class);
-        System.out.println(diffs.size());
+     
     }
 }
