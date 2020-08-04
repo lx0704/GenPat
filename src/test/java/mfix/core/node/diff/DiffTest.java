@@ -42,8 +42,12 @@ public class DiffTest extends TestCase {
     		File f = new File(yearPath);
     		String[] pathnames = f.list();
     		for (String pathname : pathnames) {
-                // Print the names of files and directories
-                System.out.println(yearPath + pathname);
+                String versionPath = yearPath + "/" + pathname;
+                File versionF = new File(versionPath);
+                String[] versionFiles = versionF.list();
+                for (String versionFile:versionFiles) {
+                	System.out.print(versionPath + "/" + versionFile);
+                }
             }
     		String srcFile = testbase + Constant.SEP + "src_Project.java";
     	    String tarFile = testbase + Constant.SEP + "tar_Project.java";
