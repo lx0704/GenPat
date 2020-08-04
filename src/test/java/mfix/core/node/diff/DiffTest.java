@@ -13,6 +13,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -46,7 +48,10 @@ public class DiffTest extends TestCase {
                 File versionF = new File(versionPath);
                 String[] versionFiles = versionF.list();
                 for (String versionFile:versionFiles) {
-                	System.out.println(versionPath + "/" + versionFile);
+                	String versionFullPath = versionPath + "/" + versionFile;
+                	if (Files.isDirectory(Paths.get(versionFullPath))) {
+                		System.out.println(versionFullPath);
+                	}
                 }
             }
     		String srcFile = testbase + Constant.SEP + "src_Project.java";
