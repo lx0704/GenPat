@@ -34,9 +34,10 @@ public class DiffTest extends TestCase {
 
     @Test
     public void test_extractFileDiff2() {
+    	
         String srcFile = testbase + Constant.SEP + "src_Project.java";
         String tarFile = testbase + Constant.SEP + "tar_Project.java";
         List<Diff> diffs = Diff.extractFileDiff(srcFile, tarFile, TextDiff.class);
-	System.out.println(diffs.size());
+        System.out.println(diffs.size());
     }
 }
