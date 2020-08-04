@@ -46,7 +46,7 @@ public class DiffTest extends TestCase {
                 File versionF = new File(versionPath);
                 String[] versionFiles = versionF.list();
                 for (String versionFile:versionFiles) {
-                	System.out.print(versionPath + "/" + versionFile);
+                	System.out.println(versionPath + "/" + versionFile);
                 }
             }
     		String srcFile = testbase + Constant.SEP + "src_Project.java";
