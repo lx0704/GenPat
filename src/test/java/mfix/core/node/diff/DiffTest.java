@@ -34,7 +34,12 @@ public class DiffTest extends TestCase {
 
     @Test
     public void test_extractFileDiff2() {
-    	
+    	String basePath = "/home/xia/BugDetectionProject/3Clone/";
+    	String[] years = {"NewDown2011-2017","NewDown2018","NewDown201811-12"};
+    	for(int i = 0; i < 3; i++) {
+    		String yearPath = basePath + years[i];
+    		System.out.println(yearPath);
+    	}
         String srcFile = testbase + Constant.SEP + "src_Project.java";
         String tarFile = testbase + Constant.SEP + "tar_Project.java";
         List<Diff> diffs = Diff.extractFileDiff(srcFile, tarFile, TextDiff.class);
