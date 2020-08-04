@@ -38,7 +38,7 @@ public class DiffTest extends TestCase {
     	String basePath = "/home/xia/BugDetectionProject/3Clone/";
     	String[] years = {"NewDown2011-2017","NewDown2018","NewDown201811-12"};
     	for(int i = 0; i < 3; i++) {
-    		String yearPath = basePath + years[i];
+    		String yearPath = basePath + years[i] + "All/";
     		File f = new File(yearPath);
     		String[] pathnames = f.list();
     		for (String pathname : pathnames) {
