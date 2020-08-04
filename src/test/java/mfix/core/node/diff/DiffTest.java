@@ -53,15 +53,17 @@ public class DiffTest extends TestCase {
                 		File buggyPath = new File(versionFullPath + "/buggy-version/");
                 		String[] buggyFiles = buggyPath.list();
                 		for (String buggyFile:buggyFiles) {
-                			System.out.println(versionFullPath + "/buggy-version/" + buggyFile);
+                			String srcFile = versionFullPath + "/buggy-version/" + buggyFile;
+                			String tarFile = versionFullPath + "/fixed-version/" + buggyFile;
+                			List<Diff> diffs = Diff.extractFileDiff(srcFile, tarFile, TextDiff.class);
+                	    	System.out.println(diffs.size());
                 		}
                 	}
                 }
             }
-    		String srcFile = testbase + Constant.SEP + "src_Project.java";
-    	    String tarFile = testbase + Constant.SEP + "tar_Project.java";
-    	    List<Diff> diffs = Diff.extractFileDiff(srcFile, tarFile, TextDiff.class);
-    	    System.out.println(diffs.size());
+
+    	   
+    	 
     	}
      
     }
